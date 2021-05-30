@@ -31,7 +31,6 @@ def prueba():
     numero_b = ingreso_entero("ingrese el segundo numero a sumar")
     resultado = suma_lenta(numero_a,numero_b)
     print(f"El resultado de la suma es {resultado}")
-    pass
-
+    
 if __name__ == "__main__":
     prueba()
