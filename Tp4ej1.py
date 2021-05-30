@@ -16,7 +16,7 @@ def ingreso_entero(mensaje):
         print(IngresoIncorrecto("Eso no era un numero!"))
         return None
 
-def ingreso_entero_reintento(mensaje, cantidad_reintentos):
+def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
     """
     Esta funcion llama a ingreso_entero y si el valor ingresado no es un numero le permite al usuario ingresar uno nuevo.
     El usuario tendrá una cantidad de reintentos determinados por el 2do parámetro (cantidad_reintentos)
@@ -32,7 +32,7 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos):
         raise NoMasReintentos("Se quedó sin intentos")
     return entero 
     
-def ingreso_entero_restringido(mensaje, valor_minimo, valor_maximo):
+def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=10):
     entero = ingreso_entero(mensaje)
     try:
         if entero >= valor_minimo and entero <= valor_maximo:
