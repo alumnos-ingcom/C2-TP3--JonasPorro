@@ -5,12 +5,13 @@
 ################
 
 from Tp4ej1 import ingreso_entero
+from Tp4ej6 import minimo, maximo
 
 def ordenar_mayor_a_menor(uno, dos, tres):
     intermedio = None
     tupla = (uno,dos,tres)
-    mayor = max(tupla)
-    menor = min(tupla)
+    mayor = maximo(tupla)
+    menor = minimo(tupla)
     dupla = (mayor, menor)
     if uno not in dupla:
         intermedio = uno
@@ -33,8 +34,8 @@ def ordenar_mayor_a_menor(uno, dos, tres):
 def ordenar_menor_a_mayor(uno, dos, tres):
     intermedio = None
     tupla = (uno,dos,tres)
-    mayor = max(tupla)
-    menor = min(tupla)
+    mayor = maximo(tupla)
+    menor = minimo(tupla)
     dupla = (mayor, menor)
     if uno not in dupla:
         intermedio = uno
