@@ -15,9 +15,8 @@ def ingreso_real(mensaje):
         real = float(input(mensaje + " #"))
         return real
     except ValueError as e:
-        print(IngresoIncorrecto("Eso no era un numero!"))
-        return None
-
+        raise IngresoIncorrecto("Eso no era un numero!")
+    
 def convertir_a_fahrenheit(centigrados):
     fahrenheit = (centigrados * 9/5) + 32
     return fahrenheit
@@ -29,18 +28,21 @@ def convertir_a_centigrados(fahrenheit):
 def prueba():
     print("Escoja una opción:\n1 - Centigrados a Fahrenheit \n2 - Fahrenheit a Centigrados")
     eleccion = ingreso_entero("Elección: ")
-    if eleccion == 1:
-        print("\nHa escogido convertir de Centigrados a Fahrenheit.")
-        centigrados = ingreso_real("Ingrese el valor a convertir: ")
-        fahrenheit = convertir_a_fahrenheit(centigrados)
-        print(f"{centigrados} ºC equivalen a {fahrenheit} ºF")
-    elif eleccion == 2:
-        print("\nHa escogido convertir de Fahrenheit a Centigrados.")
-        fahrenheit = ingreso_real("Ingrese el valor a convertir: ")
-        centigrados = convertir_a_centigrados(fahrenheit)
-        print(f"{fahrenheit} ºF equivalen a {centigrados} ºC")
-    else:
-        print("Opción incorrecta.")
+    try:
+        if eleccion == 1:
+            print("\nHa escogido convertir de Centigrados a Fahrenheit.")
+            centigrados = ingreso_real("Ingrese el valor a convertir: ")
+            fahrenheit = convertir_a_fahrenheit(centigrados)
+            print(f"{centigrados} ºC equivalen a {fahrenheit} ºF")
+        elif eleccion == 2:
+            print("\nHa escogido convertir de Fahrenheit a Centigrados.")
+            fahrenheit = ingreso_real("Ingrese el valor a convertir: ")
+            centigrados = convertir_a_centigrados(fahrenheit)
+            print(f"{fahrenheit} ºF equivalen a {centigrados} ºC")
+        else:
+            print("Opción incorrecta.")
+    except IngresoIncorrecto as e:
+        print("Ha ingresado un valor de tipo distinto a numérico")
 
 if __name__ == "__main__":
     prueba()
