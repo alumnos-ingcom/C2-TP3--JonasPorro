@@ -6,10 +6,7 @@
 
 def es_palindromo(texto):
     al_reves = texto[::-1]
-    if texto == al_reves:
-        return True
-    else:
-        return False
+    return (texto == al_reves)
 
 def prueba():
     texto = input("Ingrese una palabra para determinar si es palindromo: ")
