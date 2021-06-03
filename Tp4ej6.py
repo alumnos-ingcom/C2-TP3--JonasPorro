@@ -8,7 +8,7 @@ from Tp4ej1 import ingreso_entero
 def ingreso_lista(mensaje, cantidad_elementos):
     lista = [0] * cantidad_elementos
     for i in range(cantidad_elementos):
-        lista[i] = (ingreso_entero(mensaje))
+        lista[i] = ingreso_entero(mensaje)
     return lista
 
 def minimo(lista):
